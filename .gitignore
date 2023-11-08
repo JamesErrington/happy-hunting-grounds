@@ -1,0 +1,5 @@
+# Composer Files
+composer.phar
+/vendor/
+
+/tmp/
