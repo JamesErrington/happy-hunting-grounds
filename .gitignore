@@ -1,5 +1,7 @@
 # Composer Files
 composer.phar
 /vendor/
-
+# Temporary files (cache, logs etc.)
 /tmp/
+# Database files
+/data/*.sqlite

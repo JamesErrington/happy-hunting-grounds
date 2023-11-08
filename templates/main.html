@@ -1,4 +1,14 @@
 <div>
     <h2>Hello Mum</h2>
-    <button hx-post="/clicked" hx-trigger="click" hx-swap="outerHTML">Click Me!</button>
+    <repeat group="{{ @scores }}" value="{{ @item }}">
+        <button
+            hx-get="{{ 'question?score='.@item.score }}"
+            hx-trigger="click"
+            hx-target="#question-container"
+            hx-swap="innerHTML"
+        >
+        {{ @item.score }}
+        </button>
+    </repeat>
+    <div id="question-container"></div>
 </div>
