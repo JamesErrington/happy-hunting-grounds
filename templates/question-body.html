@@ -1,0 +1,24 @@
+<div id="question-body">
+    <p>For {{ @question.score }} points:</p>
+    <p>Name a player from {{ @question.team }} that has scored at {{ @question.ground }}, and the season they scored in.</p>
+    <form hx-post="/answer" hx-target="this" hx-swap="outerHTML">
+        <input type="hidden" name="id" value="{{ @question.id }}" />
+        <input
+            type="text"
+            name="player"
+            placeholder="Player name"
+            list="player-list"
+            hx-post="/player-search"
+            hx-trigger="input changed delay:500ms"
+            hx-target="#player-list"
+            hx-swap="innerHTML"
+        />
+        <datalist id="player-list"></datalist>
+        <select name="season">
+            <repeat group="{{ @seasons }}" value="{{ @item }}">
+                <option value="{{ @item.season }}">{{ @item.season }}</option>
+            </repeat>
+        </select>
+        <button type="submit">Submit Answer</button>
+    </form>
+</div>

@@ -1,0 +1,14 @@
+<h4>Question {{ @SESSION.answered_questions + 1 }}:</h4>
+<div id="question-select">
+    <p>Select a difficulty score:</p>
+    <repeat group="{{ @scores }}" value="{{ @item }}">
+        <button
+            hx-get="{{ 'question-body?score='.@item.score }}"
+            hx-trigger="click"
+            hx-target="#question-select"
+            hx-swap="outerHTML"
+        >
+        {{ @item.score }}
+        </button>
+    </repeat>
+</div>

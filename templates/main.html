@@ -1,14 +1,12 @@
-<div>
-    <h2>Hello Mum</h2>
-    <repeat group="{{ @scores }}" value="{{ @item }}">
-        <button
-            hx-get="{{ 'question?score='.@item.score }}"
-            hx-trigger="click"
-            hx-target="#question-container"
-            hx-swap="innerHTML"
-        >
-        {{ @item.score }}
-        </button>
-    </repeat>
-    <div id="question-container"></div>
+<header>
+    <h2>Happy Hunting Grounds</h2>
+    <p>Think you know your Premier League away goals? Test your esoteric football knowledge in this fiendish quiz, invented by Adam Hurrey (<a href="https://twitter.com/FootballCliches">@FootballCliches</a>)</p>
+    <h4>How does it work?</h4>
+    <p>Each game consists of 5 questions. Before each question, you must choose a difficulty level - 1 being the easiest, 10 the hardest, which will determine how many points you score for a correct answer. The question will then ask you to name a player that has scored at a certain ground, and the season they scored the goal.</p>
+</header>
+<div id="question-container">
+    <button hx-get="question-select" hx-target="#question-container">
+        Start!
+    </button>
+    <p>Previous best score: {{ 0 }}</p>
 </div>

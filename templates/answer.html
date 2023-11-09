@@ -1,0 +1,10 @@
+<div id="answer">
+    <p>You guessed: {{ @POST.player }} in the {{ @POST.season }} season.</p>
+    <p>
+        <check if="{{ @correct }}">
+            <true>Correct!</true>
+            <false>Incorrect!</false>
+        </check>
+    </p>
+    <button hx-get="/question-select" hx-target="#question-container">Try again</button>
+</div>
