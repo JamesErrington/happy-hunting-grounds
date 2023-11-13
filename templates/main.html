@@ -5,8 +5,8 @@
     <p>Each game consists of 5 questions. Before each question, you must choose a difficulty level - 1 being the easiest, 10 the hardest, which will determine how many points you score for a correct answer. The question will then ask you to name a player that has scored at a certain ground, and the season they scored the goal.</p>
 </header>
 <div id="question-container">
-    <button hx-get="question-select" hx-target="#question-container">
+    <button hx-post="select-question" hx-target="#question-container">
         Start!
     </button>
-    <p>Previous best score: {{ 0 }}</p>
+    <p>Previous best score: {{ @SESSION.best_score }}</p>
 </div>

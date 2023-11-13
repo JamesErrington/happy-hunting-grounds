@@ -4,4 +4,4 @@ composer.phar
 # Temporary files (cache, logs etc.)
 /tmp/
 # Database files
-/data/*.sqlite
+/data/**/*.sqlite
